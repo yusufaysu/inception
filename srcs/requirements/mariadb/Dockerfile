@@ -8,8 +8,6 @@ ARG DB_ROOT_PASSWORD
 RUN apt-get update -y
 RUN apt-get upgrade -y
 
-RUN apt-get install -y dumb-init
-
 RUN apt-get install -y mariadb-server
 
 RUN apt-get clean -y
@@ -32,5 +30,6 @@ COPY ./conf/mariadb.conf /etc/mysql/mariadb.conf.d/50-server.cnf
 
 EXPOSE 3306
 
-ENTRYPOINT [ "/usr/bin/dumb-init", "--" ]
 CMD ["mysqld", "--bind-address=0.0.0.0" ]
+
+

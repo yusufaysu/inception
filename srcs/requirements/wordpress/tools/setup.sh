@@ -20,7 +20,7 @@ wp user create --path=/var/www/html/wordpress --allow-root ${WP_USER_NAME} ${WP_
 
 # Set the owner of the content of our site to www-data user and group
 # For security reasons, we want to restrict who has access to these files
-chown www-data:www-data /var/www/html/wordpress/wp-content/uploads --recursive
+#chown www-data:www-data /var/www/html/wordpress/wp-content/uploads --recursive
 
 mkdir -p /run/php/
 php-fpm7.3 -F
